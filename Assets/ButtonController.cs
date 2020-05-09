@@ -10,7 +10,7 @@ public class ButtonController : MonoBehaviour
     {
         if (Input.GetKeyDown("space")) {
             Destroy(gameObject);
-            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y+1.3f, 0), Quaternion.identity);
             SceneController.WorryCount++;
             Debug.Log(SceneController.WorryCount);
         }
