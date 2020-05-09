@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -291,6 +292,32 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d687537154440a3913a9a3c7977978c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CameraTarget: {fileID: 460919721}
+  FollowDistance: 30
+  MaxFollowDistance: 100
+  MinFollowDistance: 2
+  ElevationAngle: 30
+  MaxElevationAngle: 85
+  MinElevationAngle: 0
+  OrbitalAngle: 0
+  CameraMode: 0
+  MovementSmoothing: 0
+  RotationSmoothing: 0
+  MovementSmoothingValue: 25
+  RotationSmoothingValue: 5
+  MoveSensitivity: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -491,5 +518,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205880f2649253b40ba19a4a73f91ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogObject: {fileID: 5385739388071228060, guid: d5ce08a11f71fb84a8ee33d14b4ec3e1,
+  ButtonObject: {fileID: 4891919826665204859, guid: 4fbf261f6b4973b45a7b006be5c705b5,
     type: 3}
