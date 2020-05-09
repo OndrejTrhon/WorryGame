@@ -21,7 +21,7 @@ public class NPCController : MonoBehaviour
     {
         ColliderLock = true;
         Debug.Log("Locked");
-        Invoke("UnlockColliderLock", 3);
+        Invoke("UnlockColliderLock", 2);
     }
 
     void UnlockColliderLock()
