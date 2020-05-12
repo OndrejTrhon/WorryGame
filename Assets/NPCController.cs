@@ -4,29 +4,43 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    public GameObject ButtonObject;
+    public GameObject SpeechObject;
+    public GameObject PopUpObject;
+    private GameObject InstantiatedSpeechObject;
     static bool ColliderLock;
-
+    private bool IsOnCollision = false;
+    private bool BubbleInstantiated = false;
     // Start is called before the first frame update
-    void OnCollisionEnter2D(Collision2D col)
+    
+    void Update()
     {
-        if (!ColliderLock) { 
-         Instantiate(ButtonObject, new Vector3(transform.position.x, transform.position.y+2, 0), Quaternion.identity);
-        Debug.Log("Instantiated");
-            LockColliderLock();
+        if (IsOnCollision == true && Input.GetKeyDown(KeyCode.Space) && BubbleInstantiated == false)
+        {
+            InstantiatedSpeechObject.SetActive(false);
+            Instantiate(PopUpObject, new Vector3(transform.position.x, transform.position.y + 3f, 0), Quaternion.identity);
+            SceneController.WorryCount++;
+            BubbleInstantiated = true;
         }
     }
 
-    void LockColliderLock()
+    private void Start()
     {
-        ColliderLock = true;
-        Debug.Log("Locked");
-        Invoke("UnlockColliderLock", 2);
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 10f));
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 10f));
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        IsOnCollision = true;
     }
 
-    void UnlockColliderLock()
+    private void OnCollisionExit2D(Collision2D col)
     {
-        Debug.Log("Unlocked");
-        ColliderLock = false;
+        IsOnCollision = false;
     }
+
+    void InstantiateSpeech()
+    {
+        InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2, 0), Quaternion.identity);
+    }
+
 }

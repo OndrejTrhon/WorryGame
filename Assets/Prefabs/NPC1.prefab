@@ -122,7 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205880f2649253b40ba19a4a73f91ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonObject: {fileID: 4891919826665204859, guid: 4fbf261f6b4973b45a7b006be5c705b5,
+  SpeechObject: {fileID: 4891919826665204859, guid: 4fbf261f6b4973b45a7b006be5c705b5,
+    type: 3}
+  PopUpObject: {fileID: 5385739388071228060, guid: d5ce08a11f71fb84a8ee33d14b4ec3e1,
     type: 3}
 --- !u!50 &1852517194859069867
 Rigidbody2D:

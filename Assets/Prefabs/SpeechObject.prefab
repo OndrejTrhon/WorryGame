@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1473042292929144372}
   - component: {fileID: 6574465818168524733}
   m_Layer: 0
-  m_Name: PushXObject
+  m_Name: SpeechObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
