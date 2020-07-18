@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -21,11 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-       if (gameEnd != true && gameStarted == true) { 
-        if (Input.GetKey("up")) { transform.Translate(0, speed, 0); }
-        if (Input.GetKey("down")) { transform.Translate(0, -speed, 0); }
-        if (Input.GetKey("left")) { transform.Translate(-speed, 0, 0); }
-        if (Input.GetKey("right")) { transform.Translate(speed, 0, 0); }
+       if (gameEnd != true && gameStarted == true) {
         rb.velocity = new Vector2(0.0f, -thrust);
         }
 

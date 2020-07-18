@@ -37,8 +37,8 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         SelfReference = this.gameObject;
-        Invoke("InstantiateSpeech", Random.Range(1.0f, 12f));
-        Invoke("InstantiateSpeech", Random.Range(1.0f, 12f));
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 40f));
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 17f));
         
     }
     void OnCollisionEnter2D(Collision2D col)
