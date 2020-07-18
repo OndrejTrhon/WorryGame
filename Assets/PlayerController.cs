@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float thrust = 4.0f;
     public Rigidbody2D rb;
     private bool gameEnd;
+    public static bool gameStarted = false;
     public FinalTextScript FinalScript;
     void Start()
     {
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-       if (gameEnd != true) { 
+       if (gameEnd != true && gameStarted == true) { 
         if (Input.GetKey("up")) { transform.Translate(0, speed, 0); }
         if (Input.GetKey("down")) { transform.Translate(0, -speed, 0); }
         if (Input.GetKey("left")) { transform.Translate(-speed, 0, 0); }
