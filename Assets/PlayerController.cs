@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float speed;                //Floating point variable to store the player's movement speed.
     public float thrust = 4.0f;
     public Rigidbody2D rb;
+    private bool gameEnd;
+    public FinalTextScript FinalScript;
     void Start()
     {
 
@@ -17,11 +20,20 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+       if (gameEnd != true) { 
         if (Input.GetKey("up")) { transform.Translate(0, speed, 0); }
         if (Input.GetKey("down")) { transform.Translate(0, -speed, 0); }
         if (Input.GetKey("left")) { transform.Translate(-speed, 0, 0); }
         if (Input.GetKey("right")) { transform.Translate(speed, 0, 0); }
         rb.velocity = new Vector2(0.0f, -thrust);
+        }
+
+        if (transform.position.y <= -36 && gameEnd != true) {
+            rb.velocity = Vector2.zero; 
+            Debug.Log("stop");
+            gameEnd = true;
+            FinalScript.RunEnd();
+        }
     }
 
 

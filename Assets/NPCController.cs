@@ -17,7 +17,7 @@ public class NPCController : MonoBehaviour
     {
         if (IsOnCollision == true && Input.GetKeyDown(KeyCode.Space) && BubbleInstantiated == false)
         {
-            Instantiate(PopUpObject, new Vector3(transform.position.x, transform.position.y + 3f, 0), Quaternion.identity);
+            Instantiate(PopUpObject, new Vector3(transform.position.x, transform.position.y + 4f, 0), Quaternion.identity);
             SceneController.WorryCount++;
             BubbleInstantiated = true;
         }
@@ -37,8 +37,8 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         SelfReference = this.gameObject;
-        Invoke("InstantiateSpeech", Random.Range(1.0f, 10f));
-        Invoke("InstantiateSpeech", Random.Range(1.0f, 10f));
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 12f));
+        Invoke("InstantiateSpeech", Random.Range(1.0f, 12f));
         
     }
     void OnCollisionEnter2D(Collision2D col)
@@ -53,7 +53,7 @@ public class NPCController : MonoBehaviour
 
     void InstantiateSpeech()
     {
-        InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2, 0), Quaternion.identity);
+        InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2.5f, 0), Quaternion.identity);
         InstantiatedSpeechObject.transform.SetParent(this.gameObject.transform, true);
     }
 
