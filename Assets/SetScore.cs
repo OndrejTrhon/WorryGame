@@ -9,6 +9,6 @@ public class SetScore : MonoBehaviour
 
     public void SetScoreRun() {
         var tmp = GetComponent<TextMeshPro>();
-        tmp.text = SceneController.WorryCount.ToString();
+        tmp.text = SceneController.TotalWorryCount.ToString();
     }
 }
