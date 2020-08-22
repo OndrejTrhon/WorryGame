@@ -6,9 +6,11 @@ public class NPCController : MonoBehaviour
 {
     public GameObject SpeechObject;
     public GameObject PopUpObject;
+    public Transform PlayerObject;
     private GameObject InstantiatedSpeechObject;
     private GameObject SelfReference;
     static bool ColliderLock;
+    private float DistanceToPlayer;
     private bool IsOnCollision = false;
     private bool BubbleInstantiated = false;
     // Start is called before the first frame update
@@ -32,6 +34,9 @@ public class NPCController : MonoBehaviour
         //            child.SetActive(false);
         //    }
         //}
+        DistanceToPlayer = Vector3.Distance(PlayerObject.position, transform.position);
+
+        if (Input.GetKeyDown(KeyCode.E)) { Debug.Log(DistanceToPlayer); };
     }
 
     private void Start()
@@ -47,19 +52,22 @@ public class NPCController : MonoBehaviour
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
-               Invoke("InstantiateSpeech", Random.Range(0f, 50f));
+        Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
         Invoke("InstantiateSpeech", Random.Range(0f, 50f));
 
     }
-    
+
 
     void InstantiateSpeech()
     {
+      if (DistanceToPlayer < 10) {
+
         InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2.5f, 0), Quaternion.identity);
         InstantiatedSpeechObject.transform.SetParent(this.gameObject.transform, true);
+        }
     }
 
 }
