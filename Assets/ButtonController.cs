@@ -6,6 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class ButtonController : MonoBehaviour
 {
     public GameObject DialogBubbleObject;
+    public Transform NPC;
     private GameObject SelfReference;
     private bool IsOnCollision = false;
     private bool BubbleInstantiated = false;
@@ -13,6 +14,7 @@ public class ButtonController : MonoBehaviour
     private void Start()
     {
         SelfReference = this.gameObject;
+        NPC = transform.parent;
 
     }
 
@@ -20,8 +22,9 @@ public class ButtonController : MonoBehaviour
     {
         if (IsOnCollision == true && Input.GetKeyDown(KeyCode.Space) && BubbleInstantiated == false)
         {
-            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y + 1f, 0), Quaternion.identity);
+            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y + 1f, 0), Quaternion.identity, NPC) ;
             SceneController.WorryCount++;
+            this.gameObject.SetActive(false);
             BubbleInstantiated = true;
         }
 

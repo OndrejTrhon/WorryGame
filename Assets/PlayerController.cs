@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
@@ -29,6 +30,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("stop");
             gameEnd = true;
             FinalScript.RunEnd();
+        }
+
+        if (gameEnd == true && Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Intro");
+
         }
     }
 

@@ -8,8 +8,17 @@ public class FinalTextScript : MonoBehaviour
     public GameObject TextPart1;
     public GameObject TextPart2;
     public GameObject TextPart3;
+    public GameObject TextPart4;
     public SetScore scoreObj;
 
+
+    public void Start()
+    {
+        TextPart1.gameObject.SetActive(false);
+        TextPart2.gameObject.SetActive(false);
+        TextPart3.gameObject.SetActive(false);
+        TextPart4.gameObject.SetActive(false);
+    }
     // Start is called before the first frame update
     public void RunEnd()
     {
@@ -17,7 +26,7 @@ public class FinalTextScript : MonoBehaviour
         StartCoroutine(ShowText(TextPart1, 1));
         StartCoroutine(ShowText(TextPart2, 2));
         StartCoroutine(ShowText(TextPart3, 3));
-
+        StartCoroutine(ShowText(TextPart4, 5));
 
 
     }

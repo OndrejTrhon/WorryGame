@@ -9,6 +9,7 @@ public class NPCController : MonoBehaviour
     public Transform PlayerObject;
     private GameObject InstantiatedSpeechObject;
     private GameObject SelfReference;
+    private Transform SelfParentReference;
     static bool ColliderLock;
     private float DistanceToPlayer;
     private bool IsOnCollision = false;
@@ -42,6 +43,7 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         SelfReference = this.gameObject;
+        SelfParentReference = this.transform;
 
         float firstShowTime = Random.Range(1.0f, 10f);
         Invoke("InstantiateSpeech", firstShowTime);
@@ -63,9 +65,9 @@ public class NPCController : MonoBehaviour
 
     void InstantiateSpeech()
     {
-      if (DistanceToPlayer < 10) {
+      if (DistanceToPlayer < 10 && transform.childCount < 1) {
 
-        InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2.5f, 0), Quaternion.identity);
+        InstantiatedSpeechObject = Instantiate(SpeechObject, new Vector3(transform.position.x, transform.position.y + 2.5f, 0), Quaternion.identity, SelfParentReference);
         InstantiatedSpeechObject.transform.SetParent(this.gameObject.transform, true);
         }
     }
