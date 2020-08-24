@@ -2405,21 +2405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts:
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
-  - Promin pamelo
+  - jiz je to minulost...
 --- !u!1 &556546256
 GameObject:
   m_ObjectHideFlags: 0
