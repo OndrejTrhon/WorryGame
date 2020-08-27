@@ -2405,7 +2405,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Texts:
-  - jiz je to minulost...
+  - What a cool look...
+  - I worry about my tax return.
+  - Where's my dog?!
+  - Should start a fashion blog.
+  - Do my eyeshadows look right?
+  - Ugh, I have to pay for parking
+  - Divorce papers, divorce papers
+  - Vibe goals!
+  - Have a nice day, cool outfit!
+  - Always the same dream...
+  - Should I buy new iPhone?
+  - I should've been a programmer...
+  - Where did they buy that skirt?
+  - It's hot today.
+  - It's cold today.
+  - New Houellebecq novel is boring.
+  - I struggle with time-management.
+  - yawwnnn
+  - zzzzzz
+  - The future is genderless
 --- !u!1 &556546256
 GameObject:
   m_ObjectHideFlags: 0
