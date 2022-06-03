@@ -22,8 +22,9 @@ public class ButtonController : MonoBehaviour
     {
         if (IsOnCollision == true && Input.GetKeyDown(KeyCode.Space) && BubbleInstantiated == false)
         {
-            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y + 1f, 0), Quaternion.identity, NPC) ;
-            SceneController.WorryCount++;
+            Instantiate(DialogBubbleObject, new Vector3(transform.position.x, transform.position.y + 1f, 0), Quaternion.identity, NPC);
+            SceneController.WorryCount = SceneController.TotalWorryCount - 1;
+            Debug.Log(SceneController.WorryCount);
             this.gameObject.SetActive(false);
             BubbleInstantiated = true;
         }
@@ -35,7 +36,8 @@ public class ButtonController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         IsOnCollision = true;
-        SceneController.TotalWorryCount++;
+        SceneController.TotalWorryCount= SceneController.TotalWorryCount +1;
+        Debug.Log(SceneController.WorryCount);
     }
 
     private void OnCollisionExit2D(Collision2D col)
